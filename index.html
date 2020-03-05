@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" class="h-100">
+ <head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <title>Cryptocurrency Dataset</title>
+<script src="https://kit.fontawesome.com/9006c2ca67.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+ <!-- Custom styles for this template -->
+ <style>
+p, a {
+	font-family: 'Lato', sans-serif !important;
+}
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+ </style>
+ </head>
+ <body class="d-flex flex-column h-100">
+ <header>
+ <!-- Fixed navbar -->
+ <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+ <a class="navbar-brand" href="#">Cryptocurrency Dataset</a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse" id="navbarCollapse">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+   <a class="nav-link disabled" href="#">Leaderboard</a>
+  </li>
+  </ul>
+ </div>
+ </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+ <div class="container">
+ <h1 class="mt-5">Cryptocurrency Dataset</h1>
+ <p class="lead">The dataset covers comments on multiple cryptocurrencies as well as financial indicators and search trends from 7 August 2015 to 7 April 2019. We release it under the <a href = "https://creativecommons.org/licenses/by-sa/4.0/legalcode" target = "_blank">CC BY-SA 4.0</a> licence.</p>
+	<div class = "container">
+	<h5>Data sources</h5>
+	<ul>
+	<li>financial data from <a href = "https://www.cryptocompare.com/" target = "_blank">CryptoCompare</a>: the daily opening and closing price, high-low and volume.</li>
+<li>search queries frequency from Google Trends</li>
+ <li>textual data from forums and news: Reddit, CryptoCompare and Bitcointalk</li> <br> </div>
+	<div class = "container"><p class = "text-center"><a type="button" class="btn btn-primary btn-lg"  role="button" href ="https://drive.google.com/open?id=1kW9r-iTQCtEU7ZumGqizS2ExJgI6_U2z">Download <i class="far fa-arrow-alt-circle-down"></i></a></p>
+	<p class = "text-center">
+	<a type="button" class="btn btn-outline-secondary btn-sm mr-2" role="button" href = "https://drive.google.com/open?id=1StYLFzgiqA19jwuw_NZe21gwuJDEjIAX">Bitcointalk</a>
+	<a type="button" class="btn btn-outline-secondary btn-sm mr-2" role="button" href = "https://drive.google.com/open?id=1c8TWyxoLvVpap2zfAhvUg0HCd_Utq0TD">Reddit</a>
+	<a type="button" class="btn btn-outline-secondary btn-sm" role="button" href = "https://drive.google.com/open?id=1AL64dZcTArIPxhuQDaitBz0gjnv79F08">Cryptocompare (news)</a><br>
+	<a type="button" class="btn btn-outline-secondary btn-sm mt-2"role="button" href = "https://drive.google.com/open?id=1Nkn371QnAcs68geeX7bVvscj2sGXo6nX" >Price</a>
+	<a type="button" role="button" class="btn btn-outline-secondary btn-sm mt-2" href = "https://drive.google.com/file/d/1NOAkfQjFnwIVeyMdGKVlTY83Uv7zShd6/view?usp=sharing">Google Trends</a></p>
+	</div>
+	<div class = "container pt-3 pb-3">
+	<hr><h5>Stats</h5>
+	<p><table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Source</th>
+      <th scope="col">Texts</th>
+      <th scope="col">Unique texts</th>
+      <th scope="col">Average length in tokens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Cryptocompare (news)</th>
+      <td>78 902</td>
+      <td>78 902</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th scope="row">Reddit</th>
+      <td>2 982 597</td>
+      <td>2 635 046</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th scope="row">Bitcointalk</th>
+      <td>1 664 843</td>
+      <td>1 643 705</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</p>
+	<hr>
+	<h5>Format</h5>
+	<p>Textual data is provided in .json files. Each source has fields <code>text</code>, <code>post_id</code>, and <code>date</code>. Bitcointalk and Reddit also have <code>parent_id</code> field which aligns comments with the first thread messages. For price and trends data, associated <code>coin</code> name and <code>date</code> are provided.</p>
+	<hr>
+	<h5>Method</h5>
+	<p>Seach queries frequency from Google Trends was collected using <a href = "http://github.com/GeneralMills/pytrends" target = "_blank">Pytrends</a>. Reddit textual data is fetched through <a href = "http://pushshift.io" target = "_blank">Pushshift.io</a>. For Cryptocompare, we scraped news using the official API of the aggregator. For <a href + "https://bitcointalk.org/" target = "_blank">Bitcointak</a>, a custom Selenium scraper was implemented.</p>
+	<p> <span class = "font-weight-bold text-uppercase badge badge-dark">Filtering coins</span> We only include BTC, ETH, LTC, XPR, and XMR - the top five cryptocurrencies based on market capitalisation (accordng to coinmarketcap.com using an official API. Coins that were re-branded (had their name changed) or did not have sufficient coverage during the research time period were excluded. </p>
+	<p>You can read more about the data collection process and possible feature engineering schemes in our paper "Forecasting Directional Bitcoin Price Returns using Aspect-based Sentiment Analysis on Online Communities Data".</p>
+	<hr>
+	<h5>Task</h5>
+	<p>The goal is <strong>binary classification of directional returns</strong>, which are calculated using closing prices. An upward movement in the closing price corresponds to the positive class and no movement or a downward movement is the negative class. If you would like your results to be added to the leaderboard, send us an <a href = "mailto:ekaterina.loginova@ugent.be">email</a>.</p>
+	<hr>
+	<h5>Team</h5>
+	<p>We are a part of Data Mining laboratory of Faculty of Economics at Ghent University, Belgium. This project was carried out by Wai Kit Tsang and Ekaterina Loginova under the supervision of Prof Dr Dries Benoit based on Guus van Heijningen's master thesis.</p></div>
+ </div>
+</main>
+
+<footer class="footer mt-auto py-3">
+ <div class="container">
+ <i class="far fa-envelope"></i> <a href = "mailto:ekaterina.loginova@ugent.be">Ekaterina Loginova</a> @ <span class="font-weight-bold"><a href = "https://www.ugent.be/" target ="_blank">Ghent University</a></span>
+ </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+	 </body>
+</html>
