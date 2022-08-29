@@ -1,6 +1,8 @@
 # Cryptocurrency Dataset
 The dataset covers comments on multiple cryptocurrencies as well as financial indicators and search trends from 7 August 2015 to 7 April 2019. We release it under the CC BY-SA 4.0 licence.
 
+Full corpus in .csv and pickle format per source can be found on [Google Drive](https://drive.google.com/drive/folders/1a4d1oojHuYm5Ft0vGTHTgSPam6q4DbnU?usp=sharing).
+
 ## Data sources
 * financial data from CryptoCompare: the daily opening and closing price, high-low and volume.
 * search queries frequency from Google Trends
